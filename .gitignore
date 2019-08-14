@@ -4,3 +4,8 @@
 
 # library root
 /node_modules
+
+# package manager
+yarn-error.log
+yarn.lock
+package-lock.json
