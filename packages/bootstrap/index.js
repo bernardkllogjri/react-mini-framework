@@ -1,5 +1,5 @@
 import React from "react";
-import { theme } from "../../init";
+import { theme } from "init";
 import pages from "./pages";
 import ReactDOM from "react-dom";
 import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";

@@ -2,6 +2,9 @@
 /dist/index.js
 /dist/index.js.map
 
+#OS X
+.DS_Store
+
 # library root
 /node_modules
 
