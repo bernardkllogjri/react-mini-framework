@@ -1,0 +1,6 @@
+# MISC
+/dist/index.js
+/dist/index.js.map
+
+# library root
+/node_modules
