@@ -1,23 +1,30 @@
 import React from "react";
+import { Icon, SearchBar } from "shared-components";
 import Card, {
   CardSection,
-  CardSectionHeader,
-  CardSectionContent
+  CardSectionHeader
 } from "@kiwicom/orbit-components/lib/Card";
-import Text from "@kiwicom/orbit-components/lib/Text";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
+import { Heading } from "@kiwicom/orbit-components/";
+import { PassengerOutline } from "@kiwicom/orbit-components/lib/icons";
 
 export const Header = () => (
   <Card>
-    <CardSection expandable initialExpanded>
+    <CardSection>
       <CardSectionHeader>
-        <Heading type="title3" element="h3">
-          Header
-        </Heading>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}
+        >
+          <Heading type="title3" element="h3">
+            Header
+          </Heading>
+          <SearchBar />
+          <Icon Icon={PassengerOutline} />
+        </div>
       </CardSectionHeader>
-      <CardSectionContent>
-        <Text>Site Description</Text>
-      </CardSectionContent>
     </CardSection>
   </Card>
 );

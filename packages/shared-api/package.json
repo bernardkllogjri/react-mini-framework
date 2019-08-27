@@ -1,5 +1,5 @@
 {
-  "name": "shared-components",
+  "name": "shared-api",
   "main": "src/index.js",
   "version": "0.0.1",
   "description": "",

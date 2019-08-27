@@ -1,9 +1,14 @@
-import React from "react";
+import { Container } from "shared-components";
 import Layout from "shared-page-wrapper";
-import { Title } from "shared-components";
+import { Feed } from "./page";
+import React from "react";
 
-export default () => (
-  <Layout header="Home">
-    <Title>Home Description</Title>
-  </Layout>
-);
+export default () => {
+  return (
+    <Layout>
+      <Container>
+        <Feed />
+      </Container>
+    </Layout>
+  );
+};
