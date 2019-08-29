@@ -6,12 +6,11 @@ import OrbitCard, {
   CardSection,
   CardSectionHeader
 } from "@kiwicom/orbit-components/lib/Card";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
-import Loading from "@kiwicom/orbit-components/lib/Loading";
+import { Heading, Loading } from "@kiwicom/orbit-components";
 
-const Card = ({ header, children, loading }) => {
+const Card = ({ header, children, loading, deck, image, onClick }) => {
   return (
-    <Container>
+    <Container clickable={!!onClick} onClick={onClick}>
       <OrbitCard>
         <Loading type="boxLoader" loading={loading}>
           <CardSection>
@@ -21,13 +20,13 @@ const Card = ({ header, children, loading }) => {
               </Heading>
             </CardSectionHeader>
           </CardSection>
-          <Img src="/images/placeholder.png" alt="Placeholder" />
-          <Deck />
-          <CardSection>
-            <CardSectionHeader>{children}</CardSectionHeader>
-          </CardSection>
-          {/* <div style={{ padding: 10 }}> */}
-          {/* </div> */}
+          {image && <Img src={image} alt="Placeholder" />}
+          {deck && <Deck />}
+          {children && (
+            <CardSection>
+              <CardSectionHeader>{children}</CardSectionHeader>
+            </CardSection>
+          )}
         </Loading>
       </OrbitCard>
     </Container>

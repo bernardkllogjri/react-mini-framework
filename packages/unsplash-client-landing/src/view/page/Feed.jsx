@@ -13,7 +13,12 @@ export const Feed = () => {
   }, []);
 
   return data.map(card => (
-    <Card key={card._id} header={card.title}>
+    <Card
+      key={card._id}
+      header={card.title}
+      image="/images/placeholder.png"
+      deck
+    >
       <Title>{card.desc}</Title>
     </Card>
   ));

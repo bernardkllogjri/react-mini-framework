@@ -4,3 +4,6 @@ export * from "./Card";
 export * from "./Container";
 export * from "./Icon";
 export * from "./SearchBar";
+export * from "./Input";
+export * from "./Masonry";
+export * from "./Modal";

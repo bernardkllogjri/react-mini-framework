@@ -1,0 +1,13 @@
+html,
+body,
+#root {
+  height: 90%;
+}
+
+.unsplash__client__control,
+.unsplash__client__control--is-focused {
+  border-color: transparent !important;
+  border: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}

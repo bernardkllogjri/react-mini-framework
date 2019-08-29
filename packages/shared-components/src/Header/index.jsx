@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon, SearchBar } from "shared-components";
 import Card, {
   CardSection,
@@ -18,11 +19,13 @@ export const Header = () => (
             alignItems: "center"
           }}
         >
-          <Heading type="title3" element="h3">
-            Header
-          </Heading>
+          <Link to="/">
+            <Heading type="title3" element="h3">
+              HOME
+            </Heading>
+          </Link>
           <SearchBar />
-          <Icon Icon={PassengerOutline} />
+          <Icon Icon={PassengerOutline} navigate="/profile" />
         </div>
       </CardSectionHeader>
     </CardSection>

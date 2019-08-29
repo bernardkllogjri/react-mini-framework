@@ -1,5 +1,5 @@
 {
-  "name": "unsplash-client-lending",
+  "name": "shared-utils",
   "main": "src/index.js",
   "version": "0.0.1",
   "description": "",
