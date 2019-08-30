@@ -25,8 +25,8 @@ module.exports = {
     index: base.concat("/packages/bootstrap/")
   },
   output: {
-    path: base.concat("/dist/"),
-    publicPath: "/",
+    path: base.concat("/dist/src"),
+    publicPath: "/src",
     filename: "[name].js",
     chunkFilename: "[name].chunk.js"
   }

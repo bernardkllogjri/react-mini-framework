@@ -12,4 +12,5 @@ export * from "./SearchBar";
 export * from "./Title";
 export * from "./Input";
 export * from "./Modal";
+export * from "./Stack";
 export * from "./Card";

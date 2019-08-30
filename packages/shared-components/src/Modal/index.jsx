@@ -1,6 +1,6 @@
 import React from "react";
-import { Modal as OrbitModal, Stack, Text } from "@kiwicom/orbit-components";
-import { Card } from "shared-components";
+import { Modal as OrbitModal, Text } from "@kiwicom/orbit-components";
+import { Card, Stack } from "shared-components";
 import { ModalHeader, ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 import Carousel from "nuka-carousel";
 import styled from "styled-components";
@@ -17,6 +17,7 @@ const Control = styled.div`
   border-radius: 50%;
   background-color: #4c4c4ca3;
   box-shadow: 0px 0px 5px #000000a3;
+  user-select: none;
   ${({ position }) => `margin-${position}:10px`};
 `;
 
@@ -29,33 +30,29 @@ export const Modal = ({ onClose }) => (
       description="Deeeesssscccccc…"
     />
     <ModalSection suppressed>
-      <Stack justify="center">
-        <div style={{ width: "50%" }}>
-          <Carousel
-            renderCenterLeftControls={({ previousSlide }) => (
-              <Control onClick={previousSlide} position="left">
-                ‹
-              </Control>
-            )}
-            renderCenterRightControls={({ nextSlide }) => (
-              <Control onClick={nextSlide} position="right">
-                ›
-              </Control>
-            )}
-          >
-            <img src="http://via.placeholder.com/640x360" />
-            <img src="http://via.placeholder.com/640x360" />
-            <img src="http://via.placeholder.com/640x360" />
-          </Carousel>
-        </div>
-        <div style={{ width: "50%" }}>
-          <Card header={<Text weight="bold">Comments</Text>}>
-            <Text>Op</Text>
-            <Text>Op</Text>
-            <Text>Op</Text>
-            <Text>Op</Text>
-          </Card>
-        </div>
+      <Stack centered>
+        <Carousel
+          renderCenterLeftControls={({ previousSlide }) => (
+            <Control onClick={previousSlide} position="left">
+              ‹
+            </Control>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <Control onClick={nextSlide} position="right">
+              ›
+            </Control>
+          )}
+        >
+          <img src="http://via.placeholder.com/640x360" />
+          <img src="http://via.placeholder.com/640x360" />
+          <img src="http://via.placeholder.com/640x360" />
+        </Carousel>
+        <Card header={<Text weight="bold">Comments</Text>}>
+          <Text>Op</Text>
+          <Text>Op</Text>
+          <Text>Op</Text>
+          <Text>Op</Text>
+        </Card>
       </Stack>
     </ModalSection>
   </OrbitModal>

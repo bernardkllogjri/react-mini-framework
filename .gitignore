@@ -1,6 +1,6 @@
 # MISC
-/dist/index.js
-/dist/index.js.map
+/dist/src/index.js
+/dist/src/index.js.map
 
 #OS X
 .DS_Store*

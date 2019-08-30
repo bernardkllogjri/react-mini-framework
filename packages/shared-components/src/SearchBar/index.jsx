@@ -1,7 +1,7 @@
 import React from "react";
 import AsyncSelect from "react-select/async";
 import { Mock } from "shared-api";
-import { Input } from "./components";
+import { Input, Option } from "./components";
 
 const loadOptions = (inputValue, callback) => {
   Mock.all(inputValue).then(res => {
@@ -15,7 +15,8 @@ const SearchBar = () => {
       <AsyncSelect
         components={{
           DropdownIndicator: null,
-          Input
+          Input,
+          Option
         }}
         classNamePrefix="unsplash__client"
         cacheOptions
