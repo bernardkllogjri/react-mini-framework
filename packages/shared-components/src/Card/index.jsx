@@ -8,9 +8,9 @@ import OrbitCard, {
 } from "@kiwicom/orbit-components/lib/Card";
 import { Heading, Loading } from "@kiwicom/orbit-components";
 
-const Card = ({ header, children, loading, deck, image, onClick }) => {
+const Card = ({ header, children, loading, deck, image, onClick, spacing }) => {
   return (
-    <Container clickable={!!onClick} onClick={onClick}>
+    <Container clickable={!!onClick} onClick={onClick} spacing={spacing}>
       <OrbitCard>
         <Loading type="boxLoader" loading={loading}>
           <CardSection>

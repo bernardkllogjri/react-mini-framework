@@ -14,6 +14,7 @@ export const Feed = () => {
 
   return data.map(card => (
     <Card
+      spacing={10}
       key={card._id}
       header={card.title}
       image="/images/placeholder.png"

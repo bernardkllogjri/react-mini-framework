@@ -27,6 +27,7 @@ module.exports = {
   output: {
     path: base.concat("/dist/"),
     publicPath: "/",
-    filename: "[name].js"
+    filename: "[name].js",
+    chunkFilename: "[name].chunk.js"
   }
 };

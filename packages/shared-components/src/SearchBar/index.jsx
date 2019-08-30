@@ -1,8 +1,7 @@
-import React, { useReducer } from "react";
+import React from "react";
 import AsyncSelect from "react-select/async";
 import { Mock } from "shared-api";
 import { Input } from "./components";
-import { searchReducer } from "../../reducers";
 
 const loadOptions = (inputValue, callback) => {
   Mock.all(inputValue).then(res => {
@@ -10,13 +9,7 @@ const loadOptions = (inputValue, callback) => {
   });
 };
 
-const initialState = {
-  inputValue: ""
-};
-
 const SearchBar = () => {
-  const [_, dispatch] = useReducer(searchReducer, initialState);
-
   return (
     <div style={{ width: "80%" }}>
       <AsyncSelect

@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { Icon, SearchBar } from "shared-components";
 import Card, {
   CardSection,
   CardSectionHeader
 } from "@kiwicom/orbit-components/lib/Card";
-import { Heading } from "@kiwicom/orbit-components/";
 import { PassengerOutline } from "@kiwicom/orbit-components/lib/icons";
+import { Heading, Popover, ListChoice } from "@kiwicom/orbit-components/";
 
-export const Header = () => (
+const navigate = (history, to) => history.push(to);
+
+export default ({ history, auth }) => (
   <Card>
     <CardSection>
       <CardSectionHeader>
@@ -25,7 +28,23 @@ export const Header = () => (
             </Heading>
           </Link>
           <SearchBar />
-          <Icon Icon={PassengerOutline} navigate="/profile" />
+          <Popover
+            noPadding
+            content={
+              <>
+                <ListChoice
+                  title="Profile"
+                  onClick={() => navigate(history, "/profile")}
+                />
+                <ListChoice
+                  title={auth ? "Logout" : "Login"}
+                  onClick={() => navigate(history, auth ? "/logout" : "/login")}
+                />
+              </>
+            }
+          >
+            <Icon Icon={PassengerOutline} />
+          </Popover>
         </div>
       </CardSectionHeader>
     </CardSection>

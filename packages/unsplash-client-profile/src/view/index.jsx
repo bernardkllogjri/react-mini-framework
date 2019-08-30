@@ -1,11 +1,23 @@
-import { Container, Masonry, Card, Modal } from "shared-components";
+import React, { useState, useEffect, useCallback } from "react";
+import { Container, Card, Modal } from "shared-components";
+import Masonry from "react-responsive-masonry";
 import Layout from "shared-page-wrapper";
-import React, { useState } from "react";
 import mock from "./mock.json";
 
 export default () => {
   const [opened, setOpened] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
 
+  const addResponsiveness = useCallback(() => {
+    setWidth(window.innerWidth);
+  }, [setWidth]);
+
+  useEffect(() => {
+    window.addEventListener("resize", addResponsiveness);
+    return () => {
+      window.removeEventListener("resize", addResponsiveness);
+    };
+  }, []);
   return (
     <Layout>
       {opened && <Modal onClose={() => setOpened(false)} />}
@@ -15,12 +27,13 @@ export default () => {
           header="Profile"
           image="http://via.placeholder.com/640x360"
         />
-        <Masonry columns={3} gaps={10}>
-          {mock.map(({ header, image }) => (
+        <Masonry columnsCount={width < 700 ? 2 : 3} gutter={5}>
+          {mock.map(({ header, image }, i) => (
             <Card
+              key={i}
               onClick={() => setOpened(true)}
               header={header}
-              {...(image ? { image: image } : {})}
+              {...(image ? { image } : {})}
             />
           ))}
         </Masonry>

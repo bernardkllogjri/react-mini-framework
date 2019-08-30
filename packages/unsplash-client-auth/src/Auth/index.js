@@ -1,6 +1,5 @@
 export const Auth = {
-  login: token => localStorage,
-  //   .setItem("token", token),
-  logout: () => localStorage.setItem("token", undefined),
+  login: (token, then) => (localStorage.setItem("token", token), then()),
+  logout: then => (localStorage.removeItem("token"), then()),
   token: () => localStorage.getItem("token")
 };

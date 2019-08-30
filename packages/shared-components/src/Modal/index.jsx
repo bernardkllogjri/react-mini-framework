@@ -4,6 +4,7 @@ import { Card } from "shared-components";
 import { ModalHeader, ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 import Carousel from "nuka-carousel";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Control = styled.div`
   width: 25px;
@@ -21,7 +22,12 @@ const Control = styled.div`
 
 export const Modal = ({ onClose }) => (
   <OrbitModal onClose={onClose} fixedFooter size="large">
-    <ModalHeader title="Title" description="Deeeesssscccccc…" />
+    <ModalHeader
+      title={
+        <Link to={{ pathname: "/post", state: { _id: "dsadsad" } }}>Title</Link>
+      }
+      description="Deeeesssscccccc…"
+    />
     <ModalSection suppressed>
       <Stack justify="center">
         <div style={{ width: "50%" }}>
