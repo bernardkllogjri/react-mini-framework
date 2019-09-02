@@ -1,21 +1,15 @@
 import loadable from "@loadable/component";
 
+const Post = loadable(() => import("unsplash-client-post"));
+const Login = loadable(() => import("unsplash-client-login"));
+const Logout = loadable(() => import("unsplash-client-logout"));
+const Profile = loadable(() => import("unsplash-client-profile"));
+const Lending = loadable(() => import("unsplash-client-landing"));
+
 export default [
-  { view: loadable(() => import("unsplash-client-landing")), path: "/" },
-  { view: loadable(() => import("unsplash-client-post")), path: "/post" },
-  {
-    view: loadable(() => import("unsplash-client-logout")),
-    path: "/logout",
-    middleware: "auth"
-  },
-  {
-    view: loadable(() => import("unsplash-client-profile")),
-    path: "/profile",
-    middleware: "auth"
-  },
-  {
-    view: loadable(() => import("unsplash-client-login")),
-    path: "/login",
-    middleware: "guest"
-  }
+  { view: Lending, path: "/" },
+  { view: Post, path: "/post" },
+  { view: Login, path: "/login", middleware: "guest" },
+  { view: Logout, path: "/logout", middleware: "auth" },
+  { view: Profile, path: "/profile", middleware: "auth" }
 ];
