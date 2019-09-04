@@ -1,2 +1,5 @@
-export * from "./Mock";
-export * from "./User";
+import User from "./User"
+import Mock from "./Mock"
+
+
+export { User, Mock };

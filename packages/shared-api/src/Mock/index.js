@@ -1,7 +1,7 @@
 import axios from "axios";
 import configs from "configs/site";
 
-const Mock = {
+export default {
   all: (title = "") =>
     axios.get(configs.base_url.concat("/test"), {
       params: {
@@ -10,4 +10,4 @@ const Mock = {
     })
 };
 
-export { Mock };
+
