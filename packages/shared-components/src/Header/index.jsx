@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Icon, SearchBar } from "shared-components";
+import { Icon } from "shared-components";
 import Card, {
   CardSection,
   CardSectionHeader
 } from "@kiwicom/orbit-components/lib/Card";
 import { PassengerOutline } from "@kiwicom/orbit-components/lib/icons";
 import { Heading, Popover, ListChoice } from "@kiwicom/orbit-components/";
-
+import SearchBar from "unsplash-client-searchbar";
 const navigate = (history, to) => history.push(to);
 
 export default ({ history, auth }) => (

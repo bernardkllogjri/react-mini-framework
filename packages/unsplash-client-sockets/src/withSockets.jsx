@@ -6,7 +6,6 @@ import withStore from "./withStore";
 
 export default C =>
   withStore(({ pushMessage, ...props }) => {
-    console.log(props.sockets);
     useEffect(() => {
       const socket = io(configs.socket_url);
       socket.on("connect", function() {});

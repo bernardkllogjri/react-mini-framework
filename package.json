@@ -6,7 +6,7 @@
   "author": "Bernard Kllogjri",
   "license": "ISC",
   "scripts": {
-    "start": "PACKAGE_BASE=bootstrap webpack-dev-server --config ./webpack/configs/dev.js",
+    "start": "PACKAGE_BASE=bootstrap webpack-dev-server --config ./webpack/configs/dev.js --hot",
     "analyze": "PACKAGE_BASE=bootstrap webpack --config ./webpack/configs/analyzer.js",
     "build:prod": "PACKAGE_BASE=bootstrap webpack --config ./webpack/configs/prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
