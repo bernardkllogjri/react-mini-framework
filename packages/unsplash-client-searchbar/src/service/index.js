@@ -24,10 +24,7 @@ export default class Search {
     return [
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap(({ query }) => {
-        console.log(query);
-        return Mock.all(query);
-      }),
+      switchMap(({ query }) => Mock.all(query)),
       map(result => result.data.data)
     ];
   }

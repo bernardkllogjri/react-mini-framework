@@ -13,3 +13,4 @@ export * from "./Input";
 export * from "./Modal";
 export * from "./Stack";
 export * from "./Card";
+export * from "./Animation";
