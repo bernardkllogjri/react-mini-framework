@@ -1,3 +1,3 @@
-# Unsplash client
+# React mini framework
 
-### Client sample project consuming a node js backend and unsplash-api
+### React mini framework using redux socket-io react-router
