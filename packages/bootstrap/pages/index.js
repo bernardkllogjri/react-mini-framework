@@ -1,14 +1,12 @@
 import loadable from "@loadable/component";
 
-const Post = loadable(() => import("unsplash-client-post"));
-const Login = loadable(() => import("unsplash-client-login"));
-const Logout = loadable(() => import("unsplash-client-logout"));
-const Profile = loadable(() => import("unsplash-client-profile"));
-const Lending = loadable(() => import("unsplash-client-landing"));
+const Profile = loadable(() => import("feature-guarded-page"));
+const Lending = loadable(() => import("feature-landing"));
+const Logout = loadable(() => import("feature-logout"));
+const Login = loadable(() => import("feature-login"));
 
 export default [
   { view: Lending, path: "/" },
-  { view: Post, path: "/post" },
   { view: Login, path: "/login", middleware: "guest" },
   { view: Logout, path: "/logout", middleware: "auth" },
   { view: Profile, path: "/profile", middleware: "auth" }

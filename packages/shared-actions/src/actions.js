@@ -1,3 +1,5 @@
+// SHARED ACTIONS
+
 import { SOCKET } from "./types";
 
 const addSocket = (type, payload) => ({

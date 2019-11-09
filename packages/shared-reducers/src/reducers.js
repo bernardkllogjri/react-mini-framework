@@ -1,3 +1,5 @@
+//SHARED REDUCERS
+
 import { SOCKET } from "shared-actions/src/types";
 
 const sockets = Object.keys(SOCKET).reduce(
