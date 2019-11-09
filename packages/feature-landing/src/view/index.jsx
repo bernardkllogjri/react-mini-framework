@@ -1,5 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Div = styled.div`
+  color: #929292;
+`;
 
 export default () => {
-  return <div>Bash frameworku</div>;
+  return <Div>Bash Frameworku | Landing</Div>;
 };

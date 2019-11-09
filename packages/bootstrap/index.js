@@ -1,21 +1,24 @@
 import React from "react";
-import { theme } from "init";
 import pages from "./pages";
+import { theme } from "init";
 import ReactDOM from "react-dom";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
-import { Switch, BrowserRouter as Router } from "react-router-dom";
-import { pageRenderer } from "shared-utils";
-import withSockets from "shared-sockets";
 import { createStore } from "redux";
-import { Provider } from "react-redux";
 import reducer from "shared-reducers";
-
+import { Provider } from "react-redux";
+import withSockets from "shared-sockets";
+import { pageRenderer } from "shared-utils";
+import { ThemeProvider } from "styled-components";
+import { Header, Wrapper } from "shared-components";
+import { Switch, BrowserRouter as Router, NavLink } from "react-router-dom";
 const store = createStore(reducer);
 
 const Root = withSockets(() => (
   <ThemeProvider theme={theme}>
     <Router>
-      <Switch>{pages.map((page, index) => pageRenderer(page, index))}</Switch>
+      <Header />
+      <Wrapper>
+        <Switch>{pages.map((page, index) => pageRenderer(page, index))}</Switch>
+      </Wrapper>
     </Router>
   </ThemeProvider>
 ));

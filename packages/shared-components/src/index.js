@@ -2,7 +2,6 @@
 // import { withRouter } from "react-router";
 // import { withAuth } from "shared-auth";
 
-// import HeaderComponent from "./Header";
 // import IconComponent from "./Icon";
 
 // export const Header = withAuth(withRouter(HeaderComponent));
@@ -12,6 +11,7 @@
 // export * from "./Title";
 // export * from "./Input";
 // export * from "./Modal";
-// export * from "./Stack";
 // export * from "./Card";
-// export * from "./Animation";
+
+export * from "./Header";
+export * from "./Wrapper";
