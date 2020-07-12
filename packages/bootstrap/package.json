@@ -1,0 +1,13 @@
+{
+  "name": "boostrap",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "shared-components": "*",
+    "feature-guarded-page": "*",
+    "feature-landing": "*",
+    "feature-logout": "*",
+    "feature-login": "*"
+  },
+  "license": "MIT"
+}

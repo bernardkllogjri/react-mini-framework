@@ -9,7 +9,9 @@ import withSockets from "shared-sockets";
 import { pageRenderer } from "shared-utils";
 import { ThemeProvider } from "styled-components";
 import { Header, Wrapper } from "shared-components";
-import { Switch, BrowserRouter as Router, NavLink } from "react-router-dom";
+import { Switch, BrowserRouter as Router } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
+
 const store = createStore(reducer);
 
 const Root = withSockets(() => (

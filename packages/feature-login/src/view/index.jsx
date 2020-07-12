@@ -1,44 +1,41 @@
-import { Auth } from "shared-auth";
-import validations from "./validations";
-import { User } from "shared-api";
 import React from "react";
-import { Formik } from "formik";
+import { User } from "shared-api";
+import { Auth } from "shared-auth";
+import { Grid, Segment, Loader, Dimmer } from "semantic-ui-react";
+import useForm from "shared-form";
 
-const init = {
-  email: "",
-  password: ""
+import { schema, uiSchema } from "./loginSchema";
+
+export default ({ history }) => {
+  const [isFormSubmitting, setFormSubmitting, Form] = useForm(
+    (values) => {
+      console.log(values);
+      User.login(values)
+        .then((res) => {
+          setFormSubmitting(false);
+          Auth.login(res.data.token, () => history.push("/profile"));
+        })
+        .catch((err) => {
+          console.error(err, err.response);
+          setFormSubmitting(false);
+        });
+    },
+    schema,
+    uiSchema
+  );
+
+  return (
+    <Grid>
+      <Grid.Row stretched>
+        <Grid.Column>
+          <Segment>
+            <Dimmer active={isFormSubmitting} inverted>
+              <Loader />
+            </Dimmer>
+            <Form submitLabel="Login" />
+          </Segment>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  );
 };
-
-const login = (values, setSubmitting, history) => {
-  User.login(values)
-    .then(res => {
-      setSubmitting(false);
-      Auth.login(res.data.token, () => history.push("/profile"));
-    })
-    .catch(err => {
-      console.log(err, err.response);
-      setSubmitting(false);
-    });
-};
-
-export default ({ history }) => (
-  <div>
-    <Formik
-      initialValues={init}
-      validationSchema={validations}
-      onSubmit={(values, { setSubmitting }) =>
-        login(values, setSubmitting, history)
-      }
-    >
-      {({ isSubmitting }) => (
-        <form>
-          <input type="email" name="email" id="email" />
-          <input type="password" name="password" id="password" />
-          <button submit="true" disabled={isSubmitting}>
-            Submit
-          </button>
-        </form>
-      )}
-    </Formik>
-  </div>
-);

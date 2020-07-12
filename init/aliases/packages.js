@@ -8,14 +8,16 @@ const readPackages = () => fs.readdirSync(directoryPath);
 
 const mapFolders = (folder, accumulator) => ({
   [folder]: directoryPath.concat("/" + folder),
-  ...accumulator
+  ...accumulator,
 });
 
-const reducePackages = arr =>
+const reducePackages = (arr) =>
   arr.reduce(
     (accumulator, folder) =>
       folder !== PACKAGE__BASE ? mapFolders(folder, accumulator) : accumulator,
     {}
   );
+
+console.log(reducePackages(readPackages()));
 
 module.exports = reducePackages(readPackages());

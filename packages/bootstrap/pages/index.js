@@ -9,5 +9,5 @@ export default [
   { view: Lending, path: "/" },
   { view: Login, path: "/login", middleware: "guest" },
   { view: Logout, path: "/logout", middleware: "auth" },
-  { view: Profile, path: "/profile", middleware: "auth" }
+  { view: Profile, path: "/profile", middleware: "auth" },
 ];

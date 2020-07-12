@@ -1,5 +1,11 @@
+import { useLocalStorage, pageRenderer } from "../../../shared-utils/src/";
+
+console.log(useLocalStorage, pageRenderer);
+
+const [token, setToken] = useLocalStorage("token", null);
+
 export const Auth = {
-  login: (token, then) => (localStorage.setItem("token", token), then()),
-  logout: then => (localStorage.removeItem("token"), then()),
-  token: () => localStorage.getItem("token")
+  login: (token, then) => (setToken(token), then()),
+  logout: (then) => (setToken(null), then()),
+  token: () => token,
 };
